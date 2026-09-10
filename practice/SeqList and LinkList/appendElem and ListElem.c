@@ -1,29 +1,29 @@
-#include <stdio.h>
+include <stdio.h>
 #define MAXSIZE 100
 typedef int ElemType;
-//Ë³Ðò±íµÄ¶¨Òå 
+//Ë³ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ 
 typedef struct{
 	ElemType date[MAXSIZE];
 	int length;
 }SeqList;
-//Ë³Ðò±í³õÊ¼»¯
+//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 void initList(SeqList *L)
 {
 	L->length = 0;
 } 
-//Ë³Ðò±íÌí¼ÓÔªËØ
+//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
 int appendElem(SeqList *L, ElemType elem)
 {
 	if(L->length > MAXSIZE)
 	{
-		printf("×°²»ÏÂÀ²£¡\n");
+		printf("×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
 		return 0;
 	}
 	L->date[L->length] = elem;
 	L->length++;
 	return 1;
 } 
-//Ë³Ðò±í±éÀúÔªËØ
+//Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
 void ListElem(SeqList *L)
 {
 	for(int i = 0; i < L->length; i++)
@@ -37,8 +37,8 @@ int main()
 {
 	SeqList list;
 	initList(&list);
-	printf("Ë³Ðò±íÒÑ³õÊ¼»¯£¬Ä¿Ç°³¤¶ÈÎª%d\n", list.length);
-	printf("Ë³Ðò±íÕ¼%zu×Ö½Ú\n", sizeof(list));
+	printf("Ë³ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Îª%d\n", list.length);
+	printf("Ë³ï¿½ï¿½ï¿½Õ¼%zuï¿½Ö½ï¿½\n", sizeof(list));
 	appendElem(&list,15);
 	appendElem(&list,23);
 	appendElem(&list,87);
