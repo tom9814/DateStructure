@@ -15,6 +15,7 @@ int initQueue(Queue *q)
 {
     q->front = 0;
     q->rear = 0;
+    return 1;
 }
 
 //出队
@@ -37,7 +38,7 @@ int fullQueue(Queue *q)
     {
         int step = q->front;
         //移动数据
-        for(int i = q->front; i <= q->rear; i++)
+        for(int i = q->front; i < q->rear; i++)
         {
             q->data[i - step] = q->data[i];
         }

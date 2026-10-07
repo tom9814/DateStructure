@@ -60,11 +60,11 @@ int main()
     push(s,10);
     push(s,20);
     push(s,30);
-    elemtype *e;
-    pop(s,e);
-    printf("%d\n",*e);
-    getTop(s,e);
-    printf("%d\n",*e);
+    elemtype e;
+    pop(s,&e);
+    printf("%d\n",e);
+    getTop(s,&e);
+    printf("%d\n",e);
 
     system("pause");
     return 0;

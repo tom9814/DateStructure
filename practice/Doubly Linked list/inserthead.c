@@ -71,7 +71,10 @@ int insertNode(Node *head, elemtpye data, int pos)
     q->prev = p;
     q->next = p->next;
     p->next = q;
-    q->next->prev = q;
+    if (q->next != NULL)
+    {
+        q->next->prev = q;
+    }
     return 1;
 }
 
@@ -90,7 +93,10 @@ int deleteNode(Node *head, int pos)
     }
     Node *q = p->next;
     p->next = q->next;
-    q->next->prev = p;
+    if (q->next != NULL)
+    {
+        q->next->prev = p;   
+    }
     free(q);
     return 1;
 }
@@ -117,9 +123,9 @@ int main()
     tail = inserttail(tail,4);
     tail = inserttail(tail,5);
     listNode(list);
-    insertNode(list,9,3);
+    insertNode(list,9,6);
     listNode(list);
-    deleteNode(list,4);
+    deleteNode(list,6);
     listNode(list);
     system("pause");
     return 0;
