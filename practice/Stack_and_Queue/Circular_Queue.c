@@ -43,6 +43,7 @@ int dequeue(Queue *q, elemtype *e)
         return 0;
     }
     *e = q->data[q->front];
+    free(q->data[q->front]);
     q->front = (q->front + 1) % MAXSIZE;
     return 1;
 }
